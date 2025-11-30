@@ -1,3 +1,7 @@
+# Muslim Atlas
+
+Find halal food, masjids, and Muslim businesses worldwide.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
