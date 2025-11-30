@@ -5,6 +5,8 @@ import { MapPin, ChevronRight } from "lucide-react"
 import { CATEGORIES } from "@/lib/constants"
 import { ListingStatus } from "@prisma/client"
 
+export const dynamic = 'force-dynamic'
+
 export default async function BrowsePage() {
   // Fetch all cities with listing counts
   const cities = await prisma.city.findMany({

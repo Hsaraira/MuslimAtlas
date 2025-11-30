@@ -8,6 +8,8 @@ import { getCategoryBySlug, getCategoryByValue, CATEGORIES } from "@/lib/constan
 import { MapPin, Plus, ChevronRight } from "lucide-react"
 import { ListingStatus } from "@prisma/client"
 
+export const dynamic = 'force-dynamic'
+
 interface CityCategoryPageProps {
   params: Promise<{
     citySlug: string
