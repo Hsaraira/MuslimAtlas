@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+:root {
+  /* Muslim Atlas Color Palette */
+  --primary-green: 22 101 52; /* Deep green - rgb(22, 101, 52) */
+  --primary-green-dark: 20 83 45; /* Darker green for hover */
+  --accent-gold: 202 138 4; /* Soft gold - rgb(202, 138, 4) */
+  --cream: 254 252 247; /* Warm cream/off-white - rgb(254, 252, 247) */
+  --background: 255 255 255;
+  --foreground: 23 23 23;
+  --muted: 245 245 244;
+  --muted-foreground: 120 113 108;
+  --border: 229 229 227;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary-green: var(--primary-green);
+  --color-primary-green-dark: var(--primary-green-dark);
+  --color-accent-gold: var(--accent-gold);
+  --color-cream: var(--cream);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background: rgb(var(--cream));
+  color: rgb(var(--foreground));
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}

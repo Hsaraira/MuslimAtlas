@@ -1,0 +1,215 @@
+// This is your Prisma schema file
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Enums
+enum ListingCategory {
+  MASJID
+  HALAL_FOOD
+  BUSINESS
+  EDUCATION_PROGRAM
+  ONLINE_ONLY
+}
+
+enum OwnershipType {
+  MUSLIM_OWNED
+  NON_MUSLIM_OWNED
+  UNKNOWN
+}
+
+enum OwnershipVerification {
+  SELF_DECLARED
+  COMMUNITY_VERIFIED
+  NONE
+}
+
+enum HalalStatus {
+  FULLY_HALAL
+  PARTIALLY_HALAL
+  NOT_HALAL
+  UNKNOWN
+}
+
+enum ListingStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum UserRole {
+  USER
+  OWNER
+  ADMIN
+}
+
+// Models
+model City {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  name      String
+  country   String
+  region    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  listings         Listing[]
+  suggestions      Suggestion[]
+  citySubscribers  CitySubscriber[]
+
+  @@index([slug])
+  @@index([country])
+}
+
+model Listing {
+  id          String           @id @default(cuid())
+  slug        String           @unique
+  name        String
+  category    ListingCategory
+  description String           @db.Text
+  isOnline    Boolean          @default(false)
+
+  websiteUrl     String?
+  phone          String?
+  email          String?
+  whatsappNumber String?
+  instagram      String?
+
+  addressLine1 String?
+  addressLine2 String?
+  cityId       String?
+  cityName     String?
+  stateRegion  String?
+  country      String?
+  latitude     Float?
+  longitude    Float?
+
+  ownershipType         OwnershipType         @default(UNKNOWN)
+  ownershipVerification OwnershipVerification @default(NONE)
+  halalStatus           HalalStatus           @default(UNKNOWN)
+  muslimFocus           Boolean               @default(false)
+  halalCertified        Boolean               @default(false)
+
+  status       ListingStatus @default(PENDING)
+  ownerUserId  String?
+
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  city          City?           @relation(fields: [cityId], references: [id])
+  ownerUser     User?           @relation(fields: [ownerUserId], references: [id])
+  tags          ListingTag[]
+  reports       ListingReport[]
+  stats         ListingStats[]
+
+  @@index([slug])
+  @@index([category])
+  @@index([status])
+  @@index([cityId])
+  @@index([ownerUserId])
+}
+
+model Tag {
+  id   String @id @default(cuid())
+  name String @unique
+  slug String @unique
+
+  listingTags ListingTag[]
+
+  @@index([slug])
+}
+
+model ListingTag {
+  id        String @id @default(cuid())
+  listingId String
+  tagId     String
+
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  tag     Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@unique([listingId, tagId])
+  @@index([listingId])
+  @@index([tagId])
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String?
+  email        String   @unique
+  passwordHash String?
+  role         UserRole @default(USER)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  listings Listing[]
+
+  @@index([email])
+}
+
+model Suggestion {
+  id            String   @id @default(cuid())
+  cityId        String?
+  cityName      String
+  proposedName  String
+  proposedType  String?
+  proposedLocation String?
+  notes         String?  @db.Text
+  createdAt     DateTime @default(now())
+
+  city City? @relation(fields: [cityId], references: [id])
+
+  @@index([cityId])
+  @@index([createdAt])
+}
+
+model ListingReport {
+  id         String   @id @default(cuid())
+  listingId  String
+  reason     String
+  comment    String?  @db.Text
+  resolved   Boolean  @default(false)
+  resolvedAt DateTime?
+  createdAt  DateTime @default(now())
+
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@index([listingId])
+  @@index([resolved])
+  @@index([createdAt])
+}
+
+model ListingStats {
+  id                 String   @id @default(cuid())
+  listingId          String
+  periodStart        DateTime
+  periodEnd          DateTime
+  viewCount          Int      @default(0)
+  websiteClickCount  Int      @default(0)
+  mapClickCount      Int      @default(0)
+  whatsappClickCount Int      @default(0)
+
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@unique([listingId, periodStart])
+  @@index([listingId])
+  @@index([periodStart])
+}
+
+model CitySubscriber {
+  id        String   @id @default(cuid())
+  email     String
+  citySlug  String
+  createdAt DateTime @default(now())
+
+  city City? @relation(fields: [citySlug], references: [slug])
+
+  @@unique([email, citySlug])
+  @@index([citySlug])
+  @@index([email])
+}
