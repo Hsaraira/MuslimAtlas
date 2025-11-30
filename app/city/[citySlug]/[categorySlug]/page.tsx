@@ -155,12 +155,12 @@ export default async function CityCategoryPage({ params }: CityCategoryPageProps
                   <p className="text-sm text-stone-500 mb-6">
                     Be the first to add one!
                   </p>
-                  <Button asChild>
-                    <Link href="/add-listing">
+                  <Link href="/add-listing">
+                    <Button>
                       <Plus className="mr-2" size={16} />
                       Add a listing
-                    </Link>
-                  </Button>
+                    </Button>
+                  </Link>
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -237,12 +237,12 @@ export default async function CityCategoryPage({ params }: CityCategoryPageProps
           <p className="text-stone-600 mb-6">
             Help the community by suggesting a place to add.
           </p>
-          <Button size="lg" asChild>
-            <Link href="/add-listing">
+          <Link href="/add-listing">
+            <Button size="lg">
               <Plus className="mr-2" size={20} />
               Suggest a place
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
