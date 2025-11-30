@@ -139,7 +139,7 @@ export default async function CityCategoryPage({ params }: CityCategoryPageProps
                     href={`/city/${citySlug}`}
                     className="text-sm text-green-700 hover:text-green-800 font-medium"
                   >
-                    ← All categories
+                    &larr; All categories
                   </Link>
                 </div>
               </div>
