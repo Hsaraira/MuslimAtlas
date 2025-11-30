@@ -46,7 +46,7 @@ export default function HomePage() {
                 size="lg"
                 variant="secondary"
                 className="group shadow-lg hover:shadow-xl transition-all duration-300"
-                asChild
+               
               >
                 <Link href="/browse">
                   <MapPin className="mr-2 group-hover:scale-110 transition-transform" size={20} />
@@ -57,7 +57,7 @@ export default function HomePage() {
                 size="lg"
                 variant="outline"
                 className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 shadow-lg"
-                asChild
+               
               >
                 <Link href="/browse">
                   <Search className="mr-2" size={20} />
@@ -268,7 +268,7 @@ export default function HomePage() {
               size="lg"
               variant="secondary"
               className="shadow-lg hover:shadow-xl transition-all group"
-              asChild
+             
             >
               <Link href="/add-listing">
                 <Sparkles className="mr-2 group-hover:rotate-12 transition-transform" size={20} />
@@ -279,7 +279,7 @@ export default function HomePage() {
               size="lg"
               variant="outline"
               className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
-              asChild
+             
             >
               <Link href="/for-businesses">
                 Learn More

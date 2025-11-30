@@ -106,7 +106,7 @@ export default async function CityPage({ params }: CityPageProps) {
               <p className="text-lg text-stone-600 mb-4">
                 No listings yet in {city.name}.
               </p>
-              <Button asChild>
+              <Button>
                 <Link href="/add-listing">
                   <Plus className="mr-2" size={16} />
                   Add the first listing
@@ -176,7 +176,7 @@ export default async function CityPage({ params }: CityPageProps) {
           <p className="text-stone-600 mb-6">
             Help the community by suggesting a place we should add.
           </p>
-          <Button size="lg" asChild>
+          <Button size="lg">
             <Link href="/add-listing">
               <Plus className="mr-2" size={20} />
               Suggest a place

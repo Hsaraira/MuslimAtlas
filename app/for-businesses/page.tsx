@@ -15,7 +15,7 @@ export default function ForBusinessesPage() {
           <p className="text-xl md:text-2xl text-green-50 mb-8 max-w-3xl mx-auto">
             Muslim Atlas helps your masjid, halal business, or Muslim service reach the global Ummah with a clean, shareable page.
           </p>
-          <Button size="lg" variant="secondary" asChild>
+          <Button size="lg" variant="secondary">
             <Link href="/add-listing">
               List Your Business for Free
             </Link>
@@ -200,7 +200,7 @@ export default function ForBusinessesPage() {
           <p className="text-lg md:text-xl mb-8 text-green-50">
             It takes about 2-3 minutes to create your listing.
           </p>
-          <Button size="lg" variant="secondary" asChild>
+          <Button size="lg" variant="secondary">
             <Link href="/add-listing">
               Add Your Listing Now
             </Link>

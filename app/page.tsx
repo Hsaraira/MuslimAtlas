@@ -20,13 +20,13 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button size="lg" asChild>
+              <Button size="lg">
                 <Link href="/browse">
                   <MapPin className="mr-2" size={20} />
                   Find places near me
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline">
                 <Link href="/browse">
                   <Search className="mr-2" size={20} />
                   Browse by city
@@ -69,7 +69,7 @@ export default function HomePage() {
           <p className="text-lg md:text-xl mb-8 text-green-50">
             Get a clean, shareable page where Muslims can find you.
           </p>
-          <Button size="lg" variant="secondary" asChild>
+          <Button size="lg" variant="secondary">
             <Link href="/add-listing">
               List your business for free
             </Link>
