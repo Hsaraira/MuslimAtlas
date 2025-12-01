@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { Search, MapPin, Star } from "lucide-react"
 import { CATEGORIES } from "@/lib/constants"
 
-const ease = [0.22, 1, 0.36, 1]
+const ease = [0.22, 1, 0.36, 1] as const
 
 export default function HomePage() {
   return (
