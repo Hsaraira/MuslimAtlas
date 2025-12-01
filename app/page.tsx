@@ -9,8 +9,8 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - Apple style: clean, minimal, spacious */}
-      <section className="pt-24 pb-32 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="pt-24 pb-32 px-6 w-full">
+        <div className="max-w-4xl mx-auto text-center w-full">
           {/* Simple, bold headline - no gradients, no gimmicks */}
           <motion.h1
             initial={{ opacity: 0, y: 10 }}
@@ -50,8 +50,8 @@ export default function HomePage() {
       </section>
 
       {/* Categories - Grid with minimal cards */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20 px-6 bg-gray-50 w-full">
+        <div className="max-w-6xl mx-auto w-full">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {CATEGORIES.map((category, i) => (
               <motion.div
@@ -87,8 +87,8 @@ export default function HomePage() {
       </section>
 
       {/* Simple CTA - no loud colors */}
-      <section className="py-32 px-6">
-        <div className="max-w-3xl mx-auto text-center">
+      <section className="py-32 px-6 w-full">
+        <div className="max-w-3xl mx-auto text-center w-full">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
