@@ -8,9 +8,9 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center h-14">
+    <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 w-full">
+      <div className="w-full px-6">
+        <div className="flex justify-between items-center h-14 max-w-7xl mx-auto">
           {/* Logo - Simple, clean */}
           <Link
             href="/"
