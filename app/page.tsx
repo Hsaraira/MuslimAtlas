@@ -9,8 +9,8 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-ma-bg">
       {/* Hero Section - Centered search-first layout */}
-      <section className="min-h-screen bg-ma-bg">
-        <div className="max-w-3xl mx-auto px-4 flex flex-col items-center text-center pt-24 md:pt-32">
+      <section className="min-h-screen bg-ma-bg flex items-center justify-center">
+        <div className="max-w-3xl mx-auto px-4 flex flex-col items-center text-center">
           {/* Logo and Brand */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
