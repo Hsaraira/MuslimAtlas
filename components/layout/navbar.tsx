@@ -8,34 +8,35 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 w-full">
+    <nav className="bg-ma-bg/95 backdrop-blur-md border-b border-ma-border sticky top-0 z-50 w-full">
       <div className="w-full px-6">
         <div className="flex justify-between items-center h-14 max-w-7xl mx-auto">
-          {/* Logo - Simple, clean */}
+          {/* Logo */}
           <Link
             href="/"
-            className="text-base font-semibold text-gray-900 tracking-tight"
+            className="flex items-center gap-1.5 text-base font-semibold text-ma-navy tracking-tight"
           >
+            <span className="text-lg">🌙</span>
             Muslim Atlas
           </Link>
 
-          {/* Desktop Navigation - Minimal spacing */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/browse"
-              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-sm text-ma-muted hover:text-ma-navy transition-colors"
             >
               Browse
             </Link>
             <Link
               href="/add-listing"
-              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-sm text-ma-muted hover:text-ma-navy transition-colors"
             >
               Add Listing
             </Link>
             <Link
               href="/for-businesses"
-              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-sm text-ma-muted hover:text-ma-navy transition-colors"
             >
               For Businesses
             </Link>
@@ -44,7 +45,7 @@ export function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-gray-600 hover:text-gray-900"
+            className="md:hidden p-2 text-ma-muted hover:text-ma-navy"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -54,25 +55,25 @@ export function Navbar() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white">
+        <div className="md:hidden border-t border-ma-border bg-ma-bg">
           <div className="px-6 py-4 space-y-1">
             <Link
               href="/browse"
-              className="block text-gray-600 hover:text-gray-900 transition-colors py-2 text-sm"
+              className="block text-ma-muted hover:text-ma-navy transition-colors py-2 text-sm"
               onClick={() => setMobileMenuOpen(false)}
             >
               Browse
             </Link>
             <Link
               href="/add-listing"
-              className="block text-gray-600 hover:text-gray-900 transition-colors py-2 text-sm"
+              className="block text-ma-muted hover:text-ma-navy transition-colors py-2 text-sm"
               onClick={() => setMobileMenuOpen(false)}
             >
               Add Listing
             </Link>
             <Link
               href="/for-businesses"
-              className="block text-gray-600 hover:text-gray-900 transition-colors py-2 text-sm"
+              className="block text-ma-muted hover:text-ma-navy transition-colors py-2 text-sm"
               onClick={() => setMobileMenuOpen(false)}
             >
               For Businesses

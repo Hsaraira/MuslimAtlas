@@ -2,17 +2,17 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-100 mt-20">
+    <footer className="bg-ma-bg border-t border-ma-border mt-20">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs font-semibold text-gray-900 mb-4 uppercase tracking-wider">Browse</h4>
+            <h4 className="text-xs font-semibold text-ma-navy mb-4 uppercase tracking-wider">Browse</h4>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="/browse"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-ma-muted hover:text-ma-navy transition-colors"
                 >
                   All Listings
                 </Link>
@@ -20,7 +20,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/add-listing"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-ma-muted hover:text-ma-navy transition-colors"
                 >
                   Add Listing
                 </Link>
@@ -30,12 +30,12 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="text-xs font-semibold text-gray-900 mb-4 uppercase tracking-wider">Resources</h4>
+            <h4 className="text-xs font-semibold text-ma-navy mb-4 uppercase tracking-wider">Resources</h4>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="/about"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-ma-muted hover:text-ma-navy transition-colors"
                 >
                   About
                 </Link>
@@ -43,7 +43,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/for-businesses"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-ma-muted hover:text-ma-navy transition-colors"
                 >
                   For Businesses
                 </Link>
@@ -53,12 +53,12 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-xs font-semibold text-gray-900 mb-4 uppercase tracking-wider">Legal</h4>
+            <h4 className="text-xs font-semibold text-ma-navy mb-4 uppercase tracking-wider">Legal</h4>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="/privacy"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-ma-muted hover:text-ma-navy transition-colors"
                 >
                   Privacy
                 </Link>
@@ -66,7 +66,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/terms"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-ma-muted hover:text-ma-navy transition-colors"
                 >
                   Terms
                 </Link>
@@ -76,12 +76,12 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-xs font-semibold text-gray-900 mb-4 uppercase tracking-wider">Contact</h4>
+            <h4 className="text-xs font-semibold text-ma-navy mb-4 uppercase tracking-wider">Contact</h4>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="/contact"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-ma-muted hover:text-ma-navy transition-colors"
                 >
                   Get in Touch
                 </Link>
@@ -89,7 +89,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/halal-policy"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-ma-muted hover:text-ma-navy transition-colors"
                 >
                   Halal Policy
                 </Link>
@@ -98,8 +98,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-gray-100">
-          <p className="text-xs text-gray-500">&copy; {new Date().getFullYear()} Muslim Atlas. All rights reserved.</p>
+        <div className="mt-16 pt-8 border-t border-ma-border">
+          <p className="text-xs text-ma-muted">&copy; {new Date().getFullYear()} Muslim Atlas. All rights reserved.</p>
         </div>
       </div>
     </footer>

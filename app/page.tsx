@@ -2,122 +2,74 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Search } from "lucide-react"
+import { Search, MapPin } from "lucide-react"
 import { CATEGORIES } from "@/lib/constants"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center">
-      {/* Hero Section - Apple style: clean, minimal, spacious */}
-      <section className="pt-24 pb-32 px-6 w-full flex justify-center">
-        <div className="max-w-4xl text-center">
-          {/* Simple, bold headline - no gradients, no gimmicks */}
-          <motion.h1
+    <div className="min-h-screen bg-ma-bg">
+      {/* Hero Section - Centered search-first layout */}
+      <section className="min-h-screen bg-ma-bg">
+        <div className="max-w-3xl mx-auto px-4 flex flex-col items-center text-center pt-24 md:pt-32">
+          {/* Logo and Brand */}
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-5xl md:text-7xl font-semibold tracking-tight text-gray-900 mb-6 leading-[1.1]"
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex items-center gap-2"
           >
-            Find your community.
-          </motion.h1>
+            <span className="text-2xl">🌙</span>
+            <h1 className="text-4xl md:text-5xl font-semibold text-ma-navy">
+              Muslim Atlas
+            </h1>
+          </motion.div>
 
+          {/* Tagline */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-600 mb-16 font-normal leading-relaxed"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-3 text-base md:text-lg text-ma-muted max-w-xl"
           >
-            Discover masjids, halal restaurants, and Muslim-owned businesses near you.
+            Find masjids, halal food, and Muslim businesses near you.
           </motion.p>
 
-          {/* Clean search bar - minimal, functional */}
+          {/* Search bar */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="max-w-2xl mx-auto"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-8 w-full max-w-2xl bg-white border border-ma-border shadow-lg rounded-full flex items-center gap-3 px-4 py-3 md:py-4"
           >
-            <div className="relative">
-              <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search for masjids, halal food, and more"
-                className="w-full h-14 pl-14 pr-6 rounded-full border border-gray-200 focus:border-gray-400 outline-none transition-colors text-base bg-white"
-              />
-            </div>
+            <Search className="w-5 h-5 text-gray-400 flex-shrink-0" />
+            <input
+              type="text"
+              placeholder="Search for masjids, halal food, or businesses..."
+              className="flex-1 bg-transparent outline-none text-sm md:text-base text-ma-navy placeholder:text-gray-400"
+            />
+            <MapPin className="w-5 h-5 text-gray-400 cursor-pointer hover:text-ma-accent transition-colors flex-shrink-0" />
           </motion.div>
-        </div>
-      </section>
 
-      {/* Categories - Grid with minimal cards */}
-      <section className="py-20 px-6 bg-gray-50 w-full flex justify-center">
-        <div className="max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {CATEGORIES.map((category, i) => (
-              <motion.div
-                key={category.value}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-              >
-                <Link href={`/browse?category=${category.slug}`}>
-                  <div className="group relative bg-white rounded-2xl p-8 hover:shadow-lg transition-all duration-300 h-full border border-gray-100">
-                    <div className="text-4xl mb-4">
-                      {category.value === "MASJID" && "🕌"}
-                      {category.value === "HALAL_FOOD" && "🍽️"}
-                      {category.value === "BUSINESS" && "🏪"}
-                      {category.value === "EDUCATION_PROGRAM" && "📚"}
-                      {category.value === "ONLINE_ONLY" && "💻"}
-                    </div>
-
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {category.label}
-                    </h3>
-
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {category.description}
-                    </p>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Simple CTA - no loud colors */}
-      <section className="py-32 px-6 w-full flex justify-center">
-        <div className="max-w-3xl text-center">
+          {/* Category links */}
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm md:text-base text-ma-navy"
           >
-            <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6 tracking-tight">
-              List your business.
-            </h2>
-            <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-              Help Muslims discover your masjid, restaurant, or business.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/add-listing">
-                <button className="px-8 py-3 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-colors">
-                  Get started
-                </button>
+            {CATEGORIES.map((category) => (
+              <Link
+                key={category.value}
+                href={`/browse?category=${category.slug}`}
+                className="cursor-pointer hover:text-ma-accent transition-colors relative after:absolute after:left-0 after:-bottom-0.5 after:h-0.5 after:w-0 hover:after:w-full after:bg-ma-accent after:transition-all after:duration-300"
+              >
+                {category.label}
               </Link>
-
-              <Link href="/browse">
-                <button className="px-8 py-3 border border-gray-300 text-gray-900 rounded-full font-medium hover:border-gray-400 transition-colors">
-                  Browse listings
-                </button>
-              </Link>
-            </div>
+            ))}
           </motion.div>
         </div>
       </section>
+
     </div>
   )
 }
