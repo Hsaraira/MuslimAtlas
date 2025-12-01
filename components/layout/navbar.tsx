@@ -8,87 +8,74 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+    <nav className="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex justify-between items-center h-14">
+          {/* Logo - Simple, clean */}
           <Link
             href="/"
-            className="text-xl font-bold bg-gradient-to-r from-cyan-600 to-cyan-700 bg-clip-text text-transparent hover:from-cyan-700 hover:to-cyan-800 transition-all"
+            className="text-base font-semibold text-gray-900 tracking-tight"
           >
             Muslim Atlas
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          {/* Desktop Navigation - Minimal spacing */}
+          <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/browse"
-              className="text-gray-700 hover:text-cyan-600 transition-colors font-medium"
+              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
             >
               Browse
             </Link>
             <Link
               href="/add-listing"
-              className="text-gray-700 hover:text-cyan-600 transition-colors font-medium"
+              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
             >
               Add Listing
             </Link>
             <Link
               href="/for-businesses"
-              className="text-gray-700 hover:text-cyan-600 transition-colors font-medium"
+              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
             >
               For Businesses
-            </Link>
-            <Link
-              href="/login"
-              className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-xl hover:shadow-lg hover:-translate-y-0.5 transition-all font-medium"
-            >
-              Login
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-gray-700 hover:text-cyan-600"
+            className="md:hidden p-2 text-gray-600 hover:text-gray-900"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white/80 backdrop-blur-sm">
-          <div className="px-4 py-4 space-y-3">
+        <div className="md:hidden border-t border-gray-100 bg-white">
+          <div className="px-6 py-4 space-y-1">
             <Link
               href="/browse"
-              className="block text-gray-700 hover:text-cyan-600 transition-colors font-medium py-2"
+              className="block text-gray-600 hover:text-gray-900 transition-colors py-2 text-sm"
               onClick={() => setMobileMenuOpen(false)}
             >
               Browse
             </Link>
             <Link
               href="/add-listing"
-              className="block text-gray-700 hover:text-cyan-600 transition-colors font-medium py-2"
+              className="block text-gray-600 hover:text-gray-900 transition-colors py-2 text-sm"
               onClick={() => setMobileMenuOpen(false)}
             >
               Add Listing
             </Link>
             <Link
               href="/for-businesses"
-              className="block text-gray-700 hover:text-cyan-600 transition-colors font-medium py-2"
+              className="block text-gray-600 hover:text-gray-900 transition-colors py-2 text-sm"
               onClick={() => setMobileMenuOpen(false)}
             >
               For Businesses
-            </Link>
-            <Link
-              href="/login"
-              className="block px-4 py-2 bg-gradient-to-r from-cyan-500 to-cyan-600 text-white rounded-xl hover:shadow-lg transition-all font-medium text-center"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Login
             </Link>
           </div>
         </div>
