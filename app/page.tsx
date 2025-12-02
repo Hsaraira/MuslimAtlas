@@ -12,11 +12,11 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-ma-bg flex items-center justify-center px-6">
-      <div className="w-full max-w-4xl text-center">
+      <div className="w-full max-w-5xl text-center">
         {/* Logo + title */}
-        <div className="flex items-center justify-center gap-3 mb-8">
+        <div className="flex items-center justify-center gap-4 mb-10">
           <svg
-            className="w-10 h-10 text-ma-navy"
+            className="w-16 h-16 text-ma-navy"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -24,20 +24,20 @@ export default function HomePage() {
           >
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
-          <h1 className="text-5xl font-bold text-ma-navy">
+          <h1 className="text-6xl md:text-7xl font-bold text-ma-navy">
             Muslim Atlas
           </h1>
         </div>
 
         {/* Tagline */}
-        <p className="text-lg text-ma-navy mb-10">
+        <p className="text-xl md:text-2xl text-ma-navy mb-12">
           Find masjids, halal food, and Muslim businesses near you.
         </p>
 
         {/* Search bar */}
-        <div className="w-full max-w-2xl mx-auto bg-white rounded-full shadow border border-gray-300 flex items-center gap-2 px-6 py-3 mb-8 hover:shadow-lg transition-shadow">
+        <div className="w-full max-w-3xl mx-auto bg-white rounded-full shadow-lg border border-gray-300 flex items-center gap-4 px-8 py-5 mb-10 hover:shadow-xl transition-shadow">
           <svg
-            className="w-5 h-5 text-gray-500 flex-shrink-0"
+            className="w-6 h-6 text-gray-500 flex-shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -52,12 +52,12 @@ export default function HomePage() {
 
           <input
             type="text"
-            className="flex-1 bg-transparent outline-none text-base text-ma-navy placeholder:text-gray-500"
+            className="flex-1 bg-transparent outline-none text-lg text-ma-navy placeholder:text-gray-500"
             placeholder="Search for masjids, halal food, or businesses..."
           />
 
           <svg
-            className="w-5 h-5 text-gray-500 flex-shrink-0 cursor-pointer hover:text-ma-navy transition-colors"
+            className="w-6 h-6 text-gray-500 flex-shrink-0 cursor-pointer hover:text-ma-navy transition-colors"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -72,7 +72,7 @@ export default function HomePage() {
         </div>
 
         {/* Categories */}
-        <nav className="flex items-center justify-center gap-8 text-base text-ma-navy">
+        <nav className="flex items-center justify-center gap-10 text-lg text-ma-navy">
           {categories.map((category) => (
             <Link
               key={category.label}
