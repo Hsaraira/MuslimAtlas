@@ -14,7 +14,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-ma-bg flex items-center justify-center px-6">
       <div className="w-full max-w-4xl text-center">
         {/* Logo + title */}
-        <div className="flex items-center justify-center gap-3 mb-4">
+        <div className="flex items-center justify-center gap-3 mb-8">
           <span className="text-5xl" aria-hidden="true">🌙</span>
           <h1 className="text-5xl md:text-6xl font-semibold text-ma-navy">
             Muslim Atlas
@@ -22,12 +22,12 @@ export default function HomePage() {
         </div>
 
         {/* Tagline */}
-        <p className="text-base md:text-lg text-ma-navy mb-10">
+        <p className="text-base md:text-lg text-ma-navy mb-12">
           Find masjids, halal food, and Muslim businesses near you.
         </p>
 
         {/* Search bar */}
-        <div className="w-full max-w-2xl mx-auto bg-white rounded-full shadow-sm hover:shadow-md transition-shadow border border-gray-300 flex items-center gap-3 px-5 py-3 mb-6">
+        <div className="w-full max-w-2xl mx-auto bg-white rounded-full shadow-sm hover:shadow-md transition-shadow border border-gray-300 flex items-center gap-3 px-5 py-3 mb-10">
           <svg
             className="w-5 h-5 text-gray-400 flex-shrink-0"
             fill="none"
