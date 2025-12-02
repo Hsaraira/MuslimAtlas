@@ -27,9 +27,9 @@ export default function HomePage() {
         </p>
 
         {/* Search bar */}
-        <div className="w-full max-w-3xl mx-auto bg-white rounded-full shadow-md border border-gray-200 flex items-center gap-4 px-6 py-4 mb-8">
+        <div className="w-full max-w-2xl mx-auto bg-white rounded-full shadow-sm hover:shadow-md transition-shadow border border-gray-300 flex items-center gap-3 px-5 py-3 mb-6">
           <svg
-            className="w-6 h-6 text-gray-500 flex-shrink-0"
+            className="w-5 h-5 text-gray-400 flex-shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -44,12 +44,12 @@ export default function HomePage() {
 
           <input
             type="text"
-            className="flex-1 bg-transparent outline-none text-base text-ma-navy placeholder:text-gray-500"
+            className="flex-1 bg-transparent outline-none text-sm text-ma-navy placeholder:text-gray-400"
             placeholder="Search for masjids, halal food, or businesses..."
           />
 
           <svg
-            className="w-6 h-6 text-gray-500 flex-shrink-0 cursor-pointer hover:text-ma-navy"
+            className="w-5 h-5 text-gray-400 flex-shrink-0 cursor-pointer hover:text-ma-navy transition-colors"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
