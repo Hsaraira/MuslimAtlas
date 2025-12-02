@@ -35,40 +35,52 @@ export default function HomePage() {
         </p>
 
         {/* Search bar */}
-        <div className="w-full max-w-3xl mx-auto bg-white rounded-full shadow-lg border border-gray-300 flex items-center gap-4 px-8 py-5 mb-10 hover:shadow-xl transition-shadow">
-          <svg
-            className="w-6 h-6 text-gray-500 flex-shrink-0"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
+        <div className="w-full max-w-3xl mx-auto mb-10">
+          <div className="relative">
+            <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
+              <svg
+                className="w-5 h-5 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
 
-          <input
-            type="text"
-            className="flex-1 bg-transparent outline-none text-lg text-ma-navy placeholder:text-gray-500"
-            placeholder="Search for masjids, halal food, or businesses..."
-          />
-
-          <svg
-            className="w-6 h-6 text-gray-500 flex-shrink-0 cursor-pointer hover:text-ma-navy transition-colors"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+            <input
+              type="text"
+              className="w-full bg-white border border-gray-200 rounded-full pl-14 pr-14 py-4 text-base text-ma-navy placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-ma-accent focus:border-transparent shadow-sm hover:shadow-md transition-all"
+              placeholder="Search for masjids, halal food, or businesses..."
             />
-          </svg>
+
+            <div className="absolute inset-y-0 right-0 pr-6 flex items-center">
+              <button
+                type="button"
+                className="text-gray-400 hover:text-ma-navy transition-colors"
+                aria-label="Voice search"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Categories */}
